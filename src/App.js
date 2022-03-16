@@ -6,16 +6,21 @@ import Rerender from "./components/Rerender";
 function App() {
 
   const [messages, setMessages] = useState([]);
+
   useEffect(()=>{
     const getMessages = async() => {
       const messagesFromServer = await fetchMessages()
       setMessages(messagesFromServer)
-    }
-    
-
+    }  
     getMessages()
-  },[])
 
+    const interval=setInterval(()=>{
+      getMessages()
+     },1000)
+
+      return()=>clearInterval(interval)
+  },[])
+ 
   const fetchMessages = async () =>{
     const res = await fetch('https://shrouded-gorge-29871.herokuapp.com/')
     const data = await res.json()
