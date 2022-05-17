@@ -9,6 +9,8 @@ import Chat from "./components/Chat";
 import Signup from "./components/SignUp/Signup";
 import CreateChat from "./components/CreateChat";
 import Home from "./components/Home";
+import Logout from "./components/Logout";
+import Profile from "./components/Profile";
 
 function App() {
 
@@ -79,10 +81,16 @@ function App() {
       <Navbar/>
       {/* <Sidebar setChatid = {setChatid} token = {token}/> */}
       <Routes>
+        {/* if (token===undefined) { */}
+        
+         {/* <Route path='/login' element={<Logout getToken = {setToken} getEmail={setEmail}/>}/> */}
+         
+      
       <Route path='/login' element={<Login getToken = {getToken} getEmail={getEmail}/>}/>
       <Route path='/sign-up' element ={<Signup/>}/>
       <Route path='/chat' element={<Chat token = {token} email = {email}/>}/>
       <Route path='/createchat' element={<CreateChat token ={token}/>}/>
+      <Route path='/profile' element={<Profile email = {email}/>}/>
       <Route path='/' element={<Home/>}/>
       </Routes>
       

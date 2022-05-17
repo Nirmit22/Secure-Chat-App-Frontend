@@ -12,7 +12,7 @@ const Chat = ({token, email}) => {
   //console.log(`The token here is ${token}`)
   
   const [messages, setMessages] = useState([]);
-  const [chatid, setChatid] = useState('1')
+  const [chatid, setChatid] = useState('')
   //setChatid('489a6e7c-32b4-41b7-b990-ef33aebb1bd7')
 
  
