@@ -9,17 +9,26 @@ import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import Signup from "./components/Signup";
 import CreateChat from "./components/CreateChat";
+import Home from "./components/Home";
 
 function App() {
 
   // const [messages, setMessages] = useState([]);
   const [token, setToken] = useState(undefined)
-  const [chatid, setChatid] = useState(1)
+  //const [chatid, setChatid] = useState('1')
+  const [email, setEmail] = useState('')
   
   const getToken = (res)=>{
     setToken(res);
     console.log(token)
   }
+
+  const getEmail = (res)=>{
+    setEmail(res);
+    console.log(email)
+  }
+
+ 
 
   // useEffect(()=>{
   //   const getMessages = async() => {
@@ -69,12 +78,13 @@ function App() {
   return (
     <Router>
       <Navbar/>
-      <Sidebar setChatid = {setChatid}/>
+      {/* <Sidebar setChatid = {setChatid} token = {token}/> */}
       <Routes>
-      <Route path='/login' element={<Login getToken = {getToken}/>}/>
+      <Route path='/login' element={<Login getToken = {getToken} getEmail={getEmail}/>}/>
       <Route path='/sign-up' element ={<Signup/>}/>
-      <Route path='/chat' element={<Chat token = {token} chatid = {chatid}/>}/>
+      <Route path='/chat' element={<Chat token = {token} email = {email}/>}/>
       <Route path='/createchat' element={<CreateChat token ={token}/>}/>
+      <Route path='/' element={<Home/>}/>
       </Routes>
       
     </Router>

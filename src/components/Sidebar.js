@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarFooter } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 
-const Sidebar = ({setChatid , chats}) => {
+const Sidebar = ({setChatid , token}) => {
 
-    chats = [1,2,3,4]
+  const [chats, setChats] = useState([])
+
+  const getChats = async() =>{
+    const res = await fetch(`${process.env.REACT_APP_SERVER}/userchats`,{
+        method: 'GET',
+        headers:{
+            'Content-type': 'application/json',
+            'Authorization' : `Bearer ${token}`
+        }
+    })
+  // const setChat = async()=>{
+  //   setChatid
+  // }
+    //alert("Signup Successful")
+    const response = await res.json()
+    console.log(response);
+    setChats(response)
+
+    return
+}
+  //getChats()
+    // chats = [1,2,3,4]
   return (
     <ProSidebar>
         <SidebarHeader>
@@ -12,17 +33,17 @@ const Sidebar = ({setChatid , chats}) => {
         </SidebarHeader>
         <Menu iconShape="square">
         {chats.map( (m) => (
-          <MenuItem >Chat {m}</MenuItem>
+          <MenuItem onClick = {async()=>{
+            setChatid(m.chatid)
+            console.log(m.chatid)
+          }}>{m.chatname}</MenuItem>
         ))
         }
-        <MenuItem >Chat 1</MenuItem>
-        <SubMenu title="Components">
-        <MenuItem>Component 1</MenuItem>
-        <MenuItem>Component 2</MenuItem>
-        </SubMenu>
+        <MenuItem ><button onClick={getChats}>Get Chats</button></MenuItem>
+       
         </Menu>
         <SidebarFooter>
-            ALL CHATS
+            All Chats
     {/**
      *  You can add a footer for the sidebar ex: copyright
      */}

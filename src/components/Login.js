@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Login = ({getToken}) => {
+const Login = ({getToken, getEmail}) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -43,6 +43,7 @@ const Login = ({getToken}) => {
       {
         alert ('Login Successful');
         getToken(token.token)
+        getEmail(obj.email)
       }
 
       return

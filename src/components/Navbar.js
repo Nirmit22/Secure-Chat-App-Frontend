@@ -15,6 +15,12 @@ const Navbar = () => {
         <Bars />
   
         <NavMenu>
+        <NavLink to='/' activeStyle >
+          <font color="Blue">
+            ZuluChat
+
+          </font>
+          </NavLink>
           <NavLink to='/login' activeStyle>
             Login
           </NavLink>
@@ -26,9 +32,6 @@ const Navbar = () => {
           </NavLink>
           <NavLink to='/createchat' activeStyle>
             Create Chat
-          </NavLink>
-          <NavLink to='/blogs' activeStyle>
-            Blogs
           </NavLink>
           <NavLink to='/sign-up' activeStyle>
             Sign Up
