@@ -4,7 +4,6 @@ import Login from "./components/Login/Login";
 import MessageInput from "./components/MessageInput";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import Signup from "./components/SignUp/Signup";
