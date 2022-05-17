@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import Allmessages from "./components/Allmessages";
-import Login from "./components/Login";
+import Login from "./components/Login/Login";
 import MessageInput from "./components/MessageInput";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Rerender from "./components/Rerender";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-import Signup from "./components/Signup";
+import Signup from "./components/SignUp/Signup";
 import CreateChat from "./components/CreateChat";
 import Home from "./components/Home";
 
@@ -74,7 +74,7 @@ function App() {
   //   const data = await fetchMessages()
   //   setMessages(data)
   //   //setMessages([...messages, finmessage])
-  // }
+  // } 
   return (
     <Router>
       <Navbar/>
