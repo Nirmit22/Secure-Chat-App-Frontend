@@ -1,7 +1,7 @@
 const Chatbox = (props) => {
   return (
     <div>
-      Name: {props.name} 
+      User id: {props.name} 
       <br></br>
       Message:{props.message} 
       <br></br><br></br>

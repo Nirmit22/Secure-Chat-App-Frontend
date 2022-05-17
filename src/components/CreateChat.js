@@ -73,10 +73,10 @@ const CreateChat = ({token}) => {
   return (
     <>
       <form onSubmit={onSubmit}>
-          <div>
+          <div>Chat name
               <input type="text" label="chatname" value={chatname} onChange = {(e) => setChatname(e.target.value)}/>
           </div>
-          <div>
+          <div>User id
               <input type="text" label="userids" value={userids} onChange = {(e) => setUserids([e.target.value])}/>
           </div>
           {/* <select value={userids} onChange = {(e)=>setUserids([e.target.value])}>
