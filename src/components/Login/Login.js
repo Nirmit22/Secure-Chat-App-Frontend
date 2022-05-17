@@ -84,7 +84,7 @@ const Login = ({ getToken ,getEmail}) => {
   return (
     <>
       <Container className={classes.root}>
-        <h1 style={{ color: "#000", alignItems: "center", fontSize: "3rem" }}>
+        <h1 style={{ color: "#000", alignItems: "center", fontSize: "3rem", fontFamily:"Poppins" }}>
           Login
         </h1>
         <form onSubmit={onSubmit}>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarFooter } from 'react-pro-sidebar';
+import { Button, Grid, ListItem } from "@material-ui/core";
 import 'react-pro-sidebar/dist/css/styles.css';
+import { useStyles } from './styles';
 
 const Sidebar = ({setChatid , token}) => {
-
+  const classes = useStyles();
   const [chats, setChats] = useState([])
 
   const getChats = async() =>{
@@ -29,25 +31,21 @@ const Sidebar = ({setChatid , token}) => {
   return (
     <ProSidebar>
         <SidebarHeader>
+        <h1 style={{ color: "#fff", alignItems: "center", fontSize: "3rem", fontFamily:'Poppins',marginLeft:"10px"}}>
         All Chats
+      </h1>
         </SidebarHeader>
         <Menu iconShape="square">
         {chats.map( (m) => (
-          <MenuItem onClick = {async()=>{
+          <MenuItem style={{fontFamily:"Poppins",fontSize:"1.2rem"}} onClick = {async()=>{
             setChatid(m.chatid)
-            console.log(m.chatid)
+            // console.log(m.chatid)
           }}>{m.chatname}</MenuItem>
         ))
         }
-        <MenuItem ><button onClick={getChats}>Get Chats</button></MenuItem>
+        <MenuItem ><Button className={classes.formBtn} onClick={getChats}>Get Chats</Button></MenuItem>
        
         </Menu>
-        <SidebarFooter>
-            All Chats
-    {/**
-     *  You can add a footer for the sidebar ex: copyright
-     */}
-        </SidebarFooter>
     </ProSidebar>   
   )
 }

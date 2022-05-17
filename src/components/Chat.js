@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Allmessages from "./Allmessages";
 import MessageInput from "./MessageInput";
 import Sidebar from "./Sidebar";
+import Grid from '@material-ui/core/Grid';
 import './Chat.css';
 
 
@@ -79,18 +80,15 @@ const Chat = ({token, email}) => {
         setMessages(data)
     }
   return (
-    <div>
-       <div>
-        {/* <h1>Secure Chat Application</h1> */}
-        {/* <Chatbox name='Nirmit' message='Hello' /> */} 
-        {/* <Login></Login> */}
+    <Grid container>
+       <Grid item xs={1}>
        <Sidebar setChatid = {setChatid} token = {token}/>
+       </Grid>
+       <Grid item xs={11}>
         <MessageInput onAdd={addMessage}></MessageInput>
         <Allmessages messages={messages}></Allmessages>
-        {/* <button onClick={fetchMessages}>Fetch</button> */}
-        {/* <Rerender fetchMessages={fetchMessages} messages={messages} setMessages={setMessages}></Rerender> */}
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   )
 
 }

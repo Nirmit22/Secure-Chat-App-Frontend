@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) => ({
   root: {
       backgroundColor:"#369",
       width:"500px",
-      height:"340px",
+      height:"400px",
       marginTop:"10px",
       alignItems:"center"
   },
@@ -46,5 +46,27 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor:"yellow",
     marginBottom: "20px",
     marginTop: "10px",
+  },
+  task: {
+    alignItems: "center",
+    width: "200px",
+    margin: "10px",
+    padding: "10px 100px",
+    backgroundColor:"#369",
+  },
+  taskMenu: {
+    alignItems: "center",
+    width: "50px",
+    height:"20px",
+    margin: "10px",
+    padding: "5px 100px",
+    backgroundColor:"white",
+    color:"#000"
+  },
+  head: {
+    marginBottom: "0px",
+    marginRight: "0px",
+    padding: "0px",
+    marginTop: "0px",
   },
 }));

@@ -67,7 +67,7 @@ const Signup = () => {
   }
   return (
     <Container className={classes.root}>
-      <h1 style={{ color: "#000", alignItems: "center", fontSize: "3rem" }}>
+      <h1 style={{ color: "#000", alignItems: "center", fontSize: "3rem", fontFamily:"Poppins" }}>
           Sign UP
         </h1>
       <form onSubmit={onSubmit}>

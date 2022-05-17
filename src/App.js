@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import Signup from "./components/SignUp/Signup";
-import CreateChat from "./components/CreateChat";
+import CreateChat from "./components/CreateChat/CreateChat";
 import Home from "./components/Home";
 import Logout from "./components/Logout";
 import Profile from "./components/Profile";
